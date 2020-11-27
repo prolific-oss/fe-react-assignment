@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import PricingCalculator from './components/PricingCalculator';
+import calculateRewardPerHour from './utils/calculateRewardPerHour';
+import calculateTotalCost from './utils/calculateTotalCost';
+
 import './App.css';
 
 function App() {
+  const [places, setPlaces] = useState('');
+  const [reward, setReward] = useState('');
+  const [time, setTime] = useState('');
+  const FEES_PERCENTAGE = 0.3;
+  const VAT_PERCENTAGE = 0.2;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PricingCalculator
+        totalCost={calculateTotalCost(places, reward, FEES_PERCENTAGE, VAT_PERCENTAGE)}
+        rewardPerHour={calculateRewardPerHour(reward, time)}
+        setPlaces={setPlaces}
+        setReward={setReward}
+        setTime={setTime}
+      />
     </div>
   );
 }
