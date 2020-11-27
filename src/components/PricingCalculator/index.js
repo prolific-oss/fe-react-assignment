@@ -51,9 +51,6 @@ function PricingCalculator({
     <div>
       <p>Total cost: <span>£{totalCost}</span></p>
       <p>Reward: <span>£{rewardPerHour}/<small>hr</small></span></p>
-      {rewardPerHour < 5 && (
-        <small>Reward per hour is less than £5, please amend entered amounts.</small>
-      )}
     </div>
   </>
 }
