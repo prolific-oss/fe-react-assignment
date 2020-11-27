@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Frontend coding and testing exercise
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This exercise contains a simple React application which contains a few basic tests. We would like you to:
 
-## Available Scripts
+1.  familiarise yourself with the application
+2.  run the tests
+3.  write the code to make the tests pass
 
-In the project directory, you can run:
+Installation and running instructions are below. Documentation for the desired
+behaviour is also below.
 
-### `yarn start`
+# Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install dependencies
 
-The page will reload if you make edits.\
+```
+yarn
+```
+
+### Compile and run the development server
+
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `yarn test`
+```
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Run tests
 
-### `yarn build`
+Launches the test runner in the interactive watch mode.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+yarn test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Desired Behaviour
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The given component calculates the pricing for running a study on Prolific.
 
-### `yarn eject`
+The component has three fields which accept user input and will be used in the calculation:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- reward - the total amount each participant will be paid for completing the
+  study (in £)
+- places - the total number of participants who will take the study
+- time - the time it takes for each participant to complete the study
+  (in minutes)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The following constants are used in the calculation but are not user inputs:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- FEES_PERCENTAGE - our additional fees percentage, given as a fraction
+  between 0-1. For example, a fee of 30% = 0.3.
+- VAT_PERCENTAGE - the additional VAT percentage, given as a fraction
+  between 0-1. For example, a VAT rate of 20% = 0.2. Note: VAT is only charged
+  on our fees, not the total cost.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The component renders the following two calculated values, which are updated
+automatically upon user input:
 
-## Learn More
+- totalCost - the total cost of the study, which can be assumed to be
+  `reward * places + our additional fees and VAT and rounded up to the nearest 1p.`
+- rewardPerHour - how much the participant will earn per hour for this study,
+  rounded up to the nearest 1p.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Example inputs and outputs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+Input                          Output
+-----------------------        ------------------------
+Reward = £1.00                 totalCost = £13.60
+Places = 10                    rewardPerHour = £6.00/hr
+Time = 10 minutes
+feesPercentage = 0.3
+vatPercentage = 0.2
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Input                          Output
+-----------------------        ------------------------
+Reward = £100                  totalCost = £72,500
+Places = 500                   rewardPerHour = £30/hr
+Time = 200 minutes
+feesPercentage = 0.4
+vatPercentage = 0.125
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Input                          Output
+-----------------------        ------------------------
+Reward = £2.38                 totalCost = £48.56
+Places = 17                    rewardPerHour = £4.33/hr
+Time = 33 minutes
+feesPercentage = 0.2
+vatPercentage = 0
+```
