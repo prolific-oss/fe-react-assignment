@@ -1,0 +1,82 @@
+$base: 16px;
+$border-color: #e3eaef;
+$input-border-focused: #199dff;
+$error-color: lightcoral;
+
+.calculatorContainer {
+  width: 100%;
+  max-width: 550px;
+  border: 1px solid $border-color;
+  border-radius: $base / 2;
+  padding: $base * 2;
+  margin: $base;
+  text-align: left;
+  background: #fff;
+  @media screen and (max-width: 720px) {
+    min-width: 200px;
+    max-width: 60%;
+  }
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.headingPrimary {
+  margin-top: 0;
+  margin-bottom: $base * 2;
+  font-size: 1.6em;
+  @media screen and (max-width: 720px) {
+    font-size: 1.4em;
+  }
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: $base / 2;
+
+  label {
+    font-weight: 500;
+  }
+
+  .rewardInput {
+    text-indent: $base / 2;
+  }
+
+  .currencySymbol {
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    font-weight: 600;
+  }
+
+  input {
+    margin: $base 0;
+    padding: $base / 2 $base;
+    border: 1px solid $border-color;
+    border-radius: $base / 4;
+    outline: 0;
+    &:focus {
+      border-color: $input-border-focused;
+    }
+  }
+}
+
+.resultsContainer {
+  p {
+    display: flex;
+    font-size: 1.1em;
+    margin-bottom: 0;
+    @media screen and (max-width: 720px) {
+      font-size: 1.05em;
+    }
+  }
+
+  .amount {
+    font-weight: 600;
+    margin-left: auto;
+  }
+}
