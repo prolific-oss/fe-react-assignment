@@ -14,7 +14,7 @@ behaviour is also below.
 ### Install dependencies
 
 ```
-yarn
+npm i
 ```
 
 ### Compile and run the development server
@@ -26,7 +26,7 @@ The page will reload if you make edits.
 You will also see any lint errors in the console.
 
 ```
-yarn start
+npm start
 ```
 
 ### Run tests
@@ -34,8 +34,10 @@ yarn start
 Launches the test runner in the interactive watch mode.
 
 ```
-yarn test
+npm test
 ```
+
+Press `a` to run all tests initially. The tests will be run each time a file change is saved.
 
 # Desired Behaviour
 
