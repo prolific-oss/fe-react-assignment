@@ -8,7 +8,7 @@ describe('PricingCalculator', () => {
     const props = {
       totalCost: 1,
       rewardPerHour: 1,
-      setPlaces: () => {},
+      setNumberOfParticipants: () => {},
       setReward: () => {},
       setTime: () => {},
     };

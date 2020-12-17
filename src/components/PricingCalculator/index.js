@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 function PricingCalculator({
   totalCost,
   rewardPerHour,
-  setPlaces,
+  setNumberOfParticipants,
   setReward,
   setTime,
 }) {
@@ -19,7 +19,7 @@ function PricingCalculator({
           <span className={styles.currencySymbol}>£</span>
           <input
             type="number"
-            placeholder="Enter amount"
+            placeholder="Enter reward amount"
             step="0.01"
             id="reward"
             className={styles.rewardInput}
@@ -27,21 +27,21 @@ function PricingCalculator({
           />
         </div>
         <div className={styles.inputSection}>
-          <label htmlFor="places">Total participants</label>
+          <label htmlFor="numberOfParticipants">Total number of participants</label>
           <input
             type="number"
-            placeholder="Enter amount"
+            placeholder="Enter number of participants"
             pattern="[0-9]"
             step="1"
-            id="places"
-            onChange={(e) => setPlaces(e.target.value)}
+            id="numberOfParticipants"
+            onChange={(e) => setNumberOfParticipants(e.target.value)}
           />
         </div>
         <div className={styles.inputSection}>
           <label htmlFor="time">Time to complete (in minutes)</label>
           <input
             type="number"
-            placeholder="Enter amount"
+            placeholder="Enter length of study in mins"
             pattern="[0-9]"
             step="1"
             id="time"
@@ -61,7 +61,7 @@ function PricingCalculator({
 PricingCalculator.propTypes = {
   totalCost: PropTypes.number.isRequired,
   rewardPerHour: PropTypes.number.isRequired,
-  setPlaces: PropTypes.func.isRequired,
+  setNumberOfParticipants: PropTypes.func.isRequired,
   setReward: PropTypes.func.isRequired,
   setTime: PropTypes.func.isRequired,
 }

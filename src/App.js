@@ -7,7 +7,7 @@ import calculateTotalCost from './utils/calculateTotalCost';
 import './App.css';
 
 function App() {
-  const [places, setPlaces] = useState('');
+  const [numberOfParticipants, setNumberOfParticipants] = useState('');
   const [reward, setReward] = useState('');
   const [time, setTime] = useState('');
   const FEES_PERCENTAGE = 0.3;
@@ -16,9 +16,9 @@ function App() {
   return (
     <div className="App">
       <PricingCalculator
-        totalCost={calculateTotalCost(places, reward, FEES_PERCENTAGE, VAT_PERCENTAGE)}
+        totalCost={calculateTotalCost(numberOfParticipants, reward, FEES_PERCENTAGE, VAT_PERCENTAGE)}
         rewardPerHour={calculateRewardPerHour(reward, time)}
-        setPlaces={setPlaces}
+        setNumberOfParticipants={setNumberOfParticipants}
         setReward={setReward}
         setTime={setTime}
       />
