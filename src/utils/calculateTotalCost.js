@@ -5,8 +5,10 @@ export default function calculateTotalCost(
   vatPercentage
 ) {
   // TODO: calculate total cost for the study
-  // Fees are charged as a percentage of the cost for all participant places
-  // VAT is charged as a percentage of the fees
-  // Total cost is the base cost plus fees plus VAT
+  // numberOfParticipants: number of places on the study
+  // rewardPerParticipant: £ that each participant receives
+  // feesPercentage: decimal representation of a percentage
+  // vatPercentage: decimal representation of a percentage
+
   return 1;
 }
