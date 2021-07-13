@@ -1,6 +1,6 @@
-export default function calculateRewardPerHour(reward, time) {
+export default function calculateRewardPerHour(reward, timeInMinutes) {
   // TODO: calculate reward per hour
   // reward: £ per person
-  // time: length of study (in minutes)
+  // timeInMinutes: length of study
   return 1;
 }
