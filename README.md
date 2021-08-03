@@ -82,7 +82,7 @@ vatPercentage = 0.2
 Input                          Output
 -----------------------        ------------------------
 Reward = £100                  totalCost = £72,500
-Number of Participants = 50    rewardPerHour = £30/hr
+Number of Participants = 500    rewardPerHour = £30/hr
 Time = 200 minutes
 feesPercentage = 0.4
 vatPercentage = 0.125
