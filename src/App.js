@@ -16,8 +16,13 @@ function App() {
   return (
     <div className="App">
       <PricingCalculator
-        totalCost={calculateTotalCost(numberOfParticipants, reward, FEES_PERCENTAGE, VAT_PERCENTAGE)}
-        rewardPerHour={calculateRewardPerHour(reward, time)}
+        totalCost={calculateTotalCost({
+          numberOfParticipants,
+          reward,
+          feesPercentage: FEES_PERCENTAGE,
+          vatPercentage: VAT_PERCENTAGE,
+        })}
+        rewardPerHour={calculateRewardPerHour({ reward, timeInMinutes: time })}
         setNumberOfParticipants={setNumberOfParticipants}
         setReward={setReward}
         setTime={setTime}
