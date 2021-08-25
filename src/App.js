@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import PricingCalculator from './components/PricingCalculator';
-import calculateRewardPerHour from './utils/calculateRewardPerHour';
-import calculateTotalCost from './utils/calculateTotalCost';
+import PricingCalculator from "./components/PricingCalculator";
+import calculateRewardPerHour from "./utils/calculateRewardPerHour";
+import calculateTotalCost from "./utils/calculateTotalCost";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-  const [numberOfParticipants, setNumberOfParticipants] = useState('');
-  const [reward, setReward] = useState('');
-  const [time, setTime] = useState('');
+  const [numberOfParticipants, setNumberOfParticipants] = useState("");
+  const [reward, setReward] = useState("");
+  const [time, setTime] = useState("");
   const FEES_PERCENTAGE = 0.3;
   const VAT_PERCENTAGE = 0.2;
 
