@@ -7,7 +7,7 @@ function PricingCalculator({
   totalCost,
   rewardPerHour,
   setNumberOfParticipants,
-  setReward,
+  setRewardPerParticipant,
   setTime,
 }) {
   return (
@@ -15,15 +15,15 @@ function PricingCalculator({
       <div className={styles.inputsContainer}>
         <h1 className={styles.headingPrimary}>Study Pricing Calculator</h1>
         <div className={styles.inputSection}>
-          <label htmlFor="reward">Participant reward</label>
+          <label htmlFor="rewardPerParticipant">Participant reward</label>
           <span className={styles.currencySymbol}>£</span>
           <input
             type="number"
             placeholder="Enter reward amount"
             step="0.01"
-            id="reward"
+            id="rewardPerParticipant"
             className={styles.rewardInput}
-            onChange={(e) => setReward(e.target.value)}
+            onChange={(e) => setRewardPerParticipant(e.target.value)}
           />
         </div>
         <div className={styles.inputSection}>
@@ -62,7 +62,7 @@ PricingCalculator.propTypes = {
   totalCost: PropTypes.number.isRequired,
   rewardPerHour: PropTypes.number.isRequired,
   setNumberOfParticipants: PropTypes.func.isRequired,
-  setReward: PropTypes.func.isRequired,
+  setRewardPerParticipant: PropTypes.func.isRequired,
   setTime: PropTypes.func.isRequired,
 }
 

@@ -1,11 +1,9 @@
-export default function calculateTotalCost(
-  {
-    numberOfParticipants,
-    rewardPerParticipant,
-    feesPercentage,
-    vatPercentage
-  }
-) {
+export default function calculateTotalCost({
+  numberOfParticipants,
+  rewardPerParticipant,
+  feesPercentage,
+  vatPercentage,
+}) {
   // TODO: calculate total cost for the study
   // numberOfParticipants: number of places on the study
   // rewardPerParticipant: £ that each participant receives

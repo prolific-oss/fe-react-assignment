@@ -45,7 +45,7 @@ The given component calculates the pricing for running a study on Prolific.
 
 The component has three fields which accept user input and will be used in the calculation:
 
-- reward - the total amount each participant will be paid for completing the
+- rewardPerParticipant - the total amount each participant will be paid for completing the
   study (in £)
 - numberOfParticipants - the total number of participants who will take the study
 - time - the time it takes for each participant to complete the study
@@ -63,34 +63,34 @@ The component renders the following two calculated values, which are updated
 automatically upon user input:
 
 - totalCost - the total cost of the study, which can be assumed to be
-  `reward * numberOfParticipants + our additional fees and VAT and rounded up to the nearest 1p.`
+  `rewardPerParticipant * numberOfParticipants + our additional fees and VAT and rounded up to the nearest 1p.`
 - rewardPerHour - how much the participant will earn per hour for this study,
   rounded up to the nearest 1p.
 
 ## Example inputs and outputs
 
 ```
-Input                          Output
------------------------        ------------------------
-Reward = £1.00                 totalCost = £13.60
-Number of Participants = 10    rewardPerHour = £6.00/hr
+Input                           Output
+-----------------------         ------------------------
+Reward per Participant = £1.00  totalCost = £13.60
+Number of Participants = 10     rewardPerHour = £6.00/hr
 Time = 10 minutes
 feesPercentage = 0.3
 vatPercentage = 0.2
 
 
-Input                          Output
------------------------        ------------------------
-Reward = £100                  totalCost = £72,500
+Input                           Output
+-----------------------         ------------------------
+Reward per Participant = £100   totalCost = £72,500
 Number of Participants = 500    rewardPerHour = £30/hr
 Time = 200 minutes
 feesPercentage = 0.4
 vatPercentage = 0.125
 
-Input                          Output
------------------------        ------------------------
-Reward = £2.38                 totalCost = £48.56
-Number of Participants = 17    rewardPerHour = £4.33/hr
+Input                           Output
+-----------------------         ------------------------
+Reward per Participant = £2.38  totalCost = £48.56
+Number of Participants = 17     rewardPerHour = £4.33/hr
 Time = 33 minutes
 feesPercentage = 0.2
 vatPercentage = 0

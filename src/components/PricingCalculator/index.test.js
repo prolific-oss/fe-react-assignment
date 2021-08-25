@@ -9,7 +9,7 @@ describe('PricingCalculator', () => {
       totalCost: 1,
       rewardPerHour: 1,
       setNumberOfParticipants: () => {},
-      setReward: () => {},
+      setRewardPerParticipant: () => {},
       setTime: () => {},
     };
 
