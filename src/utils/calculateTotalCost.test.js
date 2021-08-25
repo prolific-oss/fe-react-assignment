@@ -1,4 +1,4 @@
-import calculateTotalCost from "./calculateTotalCost";
+import calculateTotalCost from './calculateTotalCost';
 
 test("correctly calculates totalCost given numberOfParticipants and rewardPerParticipant inputs", () => {
   expect(

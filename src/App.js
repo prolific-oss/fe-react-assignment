@@ -4,7 +4,7 @@ import PricingCalculator from './components/PricingCalculator';
 import calculateRewardPerHour from './utils/calculateRewardPerHour';
 import calculateTotalCost from './utils/calculateTotalCost';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [numberOfParticipants, setNumberOfParticipants] = useState("");
