@@ -19,7 +19,7 @@ test("correctly calculates totalCost given numberOfParticipants and rewardPerPar
   ).toEqual(1.36);
 });
 
-test("totalCost is 0 when numberOfParticipants or rewardPerParticipant are 0", () => {
+test("totalCost is 0 when numberOfParticipants or rewardPerParticipant is 0", () => {
   expect(calculateTotalCost({ numberOfParticipants: 0, rewardPerParticipant: 0 })).toEqual(
     0.0
   );
